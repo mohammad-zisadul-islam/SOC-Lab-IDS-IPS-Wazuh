@@ -7,8 +7,7 @@ This project showcases a full-fledged hands-on implementation of the IDS and IPS
  This lab is aimed at beginners and those interested in becoming SOC Analysts to learn more about practical security monitoring and threat detection.
 
 This lab comprises the steps for configuring and integrating tools to perform a hands-on approach for detecting attacks in a simulated lab environment.
-
-<pre> 🔒 Key Focus Points: </pre>
+# 🔒 Key Focus Points: 
 
 <pre> Security Monitoring </pre>
 <pre> Threat Detection </pre>
