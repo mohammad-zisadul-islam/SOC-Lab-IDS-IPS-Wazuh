@@ -9,11 +9,11 @@ This project showcases a full-fledged hands-on implementation of the IDS and IPS
 This lab comprises the steps for configuring and integrating tools to perform a hands-on approach for detecting attacks in a simulated lab environment.
 # 🔒 Key Focus Points: 
 
-<pre> Security Monitoring </pre>
-<pre> Threat Detection </pre>
-<pre> Logging and Analysis </pre>
-<pre> IDS & IPS Integration </pre>
-<pre> Deployment of Wazuh SIEM </pre>
+## Security Monitoring 
+## Threat Detection 
+## Logging and Analysis 
+## IDS & IPS Integration 
+## Deployment of Wazuh SIEM
 
 # ⚙️ Features for Your Project (Mandatory)
 1. Ubuntu Server Setup
