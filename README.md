@@ -16,26 +16,26 @@ This lab comprises the steps for configuring and integrating tools to perform a 
 <pre> Deployment of Wazuh SIEM </pre>
 
 # ⚙️ Features for Your Project (Mandatory)
-Ubuntu Server Setup
-IDS Setup (using Snort/Suricata)
-IDS/IPS Mode Activation
-Wazuh SIEM Integration
-Collection and Analysis of Logs
-Monitoring of Alerts through Dashboard
-Attack Simulation and Testing
+1. Ubuntu Server Setup
+2. IDS Setup (using Snort/Suricata)
+3. IDS/IPS Mode Activation
+4. Wazuh SIEM Integration
+5. Collection and Analysis of Logs
+6. Monitoring of Alerts through Dashboard
+7. Attack Simulation and Testing
 # 🧰 Tools Needed
-Wazuh (SIEM tool)
-Ubuntu Server
-Snort / Suricata (IDS/IPS tool)
-Elastic Stack (if needed to be used)
+1. Wazuh (SIEM tool)
+2. Ubuntu Server
+3. Snort / Suricata (IDS/IPS tool)
+4. Elastic Stack (if needed to be used)
 #  Use Case
-Practice Lab for SOC Analyst
-Training Blue Teams
-Threat Detection Training
-Monitoring of Logs
-Beginners Lab for Cybersecurity
+1. Practice Lab for SOC Analyst
+2. Training Blue Teams
+3. Threat Detection Training
+4. Monitoring of Logs
+5. Beginners Lab for Cybersecurity
 # 💡 Additional Tips (to Make It Github Ready)
-Include a screenshot (Wazuh dashboard) in your README
-Include attack test results
-Include step-by-step guide
-Include a diagram for professional look
+1. Include a screenshot (Wazuh dashboard) in your README
+2. Include attack test results
+3. Include step-by-step guide
+4. Include a diagram for professional look
