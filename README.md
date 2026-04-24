@@ -149,7 +149,8 @@ sudo systemctl restart suricata
 ```
 
 *Default rules file parth* 
-``` /var/lib/suricata/rules
+```
+/var/lib/suricata/rules
 ```
 
 
