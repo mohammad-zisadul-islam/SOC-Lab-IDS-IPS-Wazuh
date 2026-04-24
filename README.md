@@ -14,11 +14,11 @@ This lab is aimed at beginners and those interested in becoming SOC Analysts to 
 
 # 🔒 Key Focus Points: 
 
-### Security Monitoring 
-### Threat Detection 
-### Logging and Analysis 
-### IDS & IPS Integration 
-### Deployment of Wazuh SIEM
+###### Security Monitoring 
+###### Threat Detection 
+###### Logging and Analysis 
+###### IDS & IPS Integration 
+###### Deployment of Wazuh SIEM
 
 # ⚙️ Features for Your Project (Mandatory)
 1. Ubuntu Server Setup
@@ -59,10 +59,10 @@ This lab is aimed at beginners and those interested in becoming SOC Analysts to 
 # Install Suricata 
 
 ```bash
-sudo apt update </pre>
+sudo apt update
 ```
 ```bash
-sudo apt install suricata -y </pre>
+sudo apt install suricata -y
 ```
 ```bash
 sudo add-apt-repository ppa:oisf/suricata-stable
