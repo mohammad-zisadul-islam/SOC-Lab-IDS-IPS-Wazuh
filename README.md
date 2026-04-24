@@ -1,8 +1,8 @@
 # SOC-Lab-IDS-IPS-Wazuh
 
-`Creat by mohammad zisadul islam`
-`Update : 21/02/2026`
-`IDS&IPS Setup and integratiom`
+- `Creat by mohammad zisadul islam`
+- `Update : 21/02/2026`
+- `IDS&IPS Setup and integratiom`
 
 
 **The proposed project will provide a fully working example of IDS/IPS implementation using Ubuntu server.
