@@ -2,7 +2,7 @@
 
 - `Creat by mohammad zisadul islam`
 - `Update : 21/02/2026`
-- `IDS&IPS Setup and integratiom`
+- `IDS&IPS Setup and integration with wazuh`
 
 
 **The proposed project will provide a fully working example of IDS/IPS implementation using Ubuntu server.
@@ -66,25 +66,45 @@ sudo apt install suricata -y
 ```
 ```bash
 sudo add-apt-repository ppa:oisf/suricata-stable
- sudo apt update 
+```
+```
+sudo apt update
+```
+```
 sudo apt install suricata -y
+```
+```
 sudo apt-get install software-properties-common
- sudo add-apt-repository ppa:oisf/suricata-stable
- sudo apt update 
- sudo apt install suricata jq
+```
+```
+sudo add-apt-repository ppa:oisf/suricata-stable
+```
+```
+sudo apt update
+```
+```
+sudo apt install suricata jq
 ```
 
 # Chack Suricata install 
 ```
- sudo tail -f /var/log/suricata/stats.log 
- sudo suricata -T -c /etc/suricata/suricata.yaml -v 
+ sudo tail -f /var/log/suricata/stats.log
+```
+``` 
+ sudo suricata -T -c /etc/suricata/suricata.yaml -v
+```
+```
  sudo systemctl status suricata
 ```
 
 # Service Enable/Start
 ```
- sudo systemctl enable suricata 
- sudo systemctl start suricata 
+ sudo systemctl enable suricata
+```
+```
+ sudo systemctl start suricata
+```
+```
  sudo systemctl status suricata
 ```
 
