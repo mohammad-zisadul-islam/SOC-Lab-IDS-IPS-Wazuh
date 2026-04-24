@@ -156,7 +156,8 @@ sudo systemctl restart suricata
 
 ## Configuration file 
 
-```sudo nano /var/ossec/etc/ossec.conf
+```
+sudo nano /var/ossec/etc/ossec.conf
 ```
 
 ```
@@ -228,7 +229,8 @@ sudo tail -f /var/log/suricata/fast.log
 
 ### Configuration file parth 
 
-```sudo nano /var/ossec/etc/ossec.conf
+```
+sudo nano /var/ossec/etc/ossec.conf
 ```
 *af-packet*
 
