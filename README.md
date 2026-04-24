@@ -1,19 +1,24 @@
 # SOC-Lab-IDS-IPS-Wazuh
 
+`Creat by mohammad zisadul islam`
+`Update : 21/02/2026`
+`IDS&IPS Setup and integratiom`
 
- The proposed project will provide a fully working example of IDS/IPS implementation using Ubuntu server.
- It includes configuration of Wazuh SIEM to collect logs from various sources, monitor events, and detect potential #security threats.
+
+**The proposed project will provide a fully working example of IDS/IPS implementation using Ubuntu server.
+It includes configuration of Wazuh SIEM to collect logs from various sources, monitor events, and detect potential #security threats.
 This project showcases a full-fledged hands-on implementation of the IDS and IPS system on Ubuntu Server, with Wazuh SIEM used for centralizing logging and monitoring systems.
- This lab is aimed at beginners and those interested in becoming SOC Analysts to learn more about practical security monitoring and threat detection.
+This lab is aimed at beginners and those interested in becoming SOC Analysts to learn more about practical security monitoring and threat detection.**
 
-This lab comprises the steps for configuring and integrating tools to perform a hands-on approach for detecting attacks in a simulated lab environment.
+`This lab comprises the steps for configuring and integrating tools to perform a hands-on approach for detecting attacks in a simulated lab environment.`
+
 # 🔒 Key Focus Points: 
 
-## Security Monitoring 
-## Threat Detection 
-## Logging and Analysis 
-## IDS & IPS Integration 
-## Deployment of Wazuh SIEM
+### Security Monitoring 
+### Threat Detection 
+### Logging and Analysis 
+### IDS & IPS Integration 
+### Deployment of Wazuh SIEM
 
 # ⚙️ Features for Your Project (Mandatory)
 1. Ubuntu Server Setup
@@ -24,95 +29,116 @@ This lab comprises the steps for configuring and integrating tools to perform a 
 6. Monitoring of Alerts through Dashboard
 7. Attack Simulation and Testing
 # 🧰 Tools Needed
-1. Wazuh (SIEM tool)
-2. Ubuntu Server
-3. Snort / Suricata (IDS/IPS tool)
-4. Elastic Stack (if needed to be used)
+- Wazuh (SIEM tool)
+- Ubuntu Server
+- Snort / Suricata (IDS/IPS tool)
+- Elastic Stack (if needed to be used)
+
+
 #  Use Case
-1. Practice Lab for SOC Analyst
-2. Training Blue Teams
-3. Threat Detection Training
-4. Monitoring of Logs
-5. Beginners Lab for Cybersecurity
+- Practice Lab for SOC Analyst
+- Training Blue Teams
+- Threat Detection Training
+- Monitoring of Logs
+- Beginners Lab for Cybersecurity
+
 # 💡 Additional Tips (to Make It Github Ready)
-1. Include a screenshot (Wazuh dashboard) in your README
-2. Include attack test results
-3. Include step-by-step guide
-4. Include a diagram for professional look
+- Include a screenshot (Wazuh dashboard) in your README
+- Include attack test results
+- Include step-by-step guide
+- Include a diagram for professional look
 
 
 
 # Use Case in IDS/IPS
 
-   # IDS
+   ## IDS
 # Installation
-It's assumed that you run a recent Ubuntu release as the official PPA can then be used for the installation. To install the latest stable Suricata version, follow the steps:
+`It's assumed that you run a recent Ubuntu release as the official PPA can then be used for the installation. To install the latest stable Suricata version, follow the steps:`
 
 # Install Suricata 
 
-<pre> sudo apt update </pre>
-<pre> sudo apt install suricata -y </pre>
-<pre> sudo add-apt-repository ppa:oisf/suricata-stable </pre>
-<pre> sudo apt update </pre>
-<pre> sudo apt install suricata -y </pre>
-<pre> sudo apt-get install software-properties-common </pre>
-<pre> sudo add-apt-repository ppa:oisf/suricata-stable </pre>
-<pre> sudo apt update </pre>
-<pre> sudo apt install suricata jq </pre>
+```bash
+sudo apt update </pre>
+```
+```bash
+sudo apt install suricata -y </pre>
+```
+```bash
+sudo add-apt-repository ppa:oisf/suricata-stable
+ sudo apt update 
+sudo apt install suricata -y
+sudo apt-get install software-properties-common
+ sudo add-apt-repository ppa:oisf/suricata-stable
+ sudo apt update 
+ sudo apt install suricata jq
+```
 
 # Chack Suricata install 
-
-<pre> sudo tail -f /var/log/suricata/stats.log </pre>
-<pre> sudo suricata -T -c /etc/suricata/suricata.yaml -v </pre>
-<pre>  sudo systemctl status suricata </pre>
-
+```
+ sudo tail -f /var/log/suricata/stats.log 
+ sudo suricata -T -c /etc/suricata/suricata.yaml -v 
+ sudo systemctl status suricata
+```
 
 # Service Enable/Start
-<pre> sudo systemctl enable suricata </pre>
-<pre> sudo systemctl start suricata </pre>
-<pre> sudo systemctl status suricata </pre>
-
+```
+ sudo systemctl enable suricata 
+ sudo systemctl start suricata 
+ sudo systemctl status suricata
+```
 
 *Use that information to configure Suricata*
-<pre> sudo nano /etc/suricata/suricata.yaml </pre>
+``` sudo nano /etc/suricata/suricata.yaml```
 
-There are many possible configuration options, we focus on the setup of the HOME_NET variable and the network interface configuration. The HOME_NET variable should include, in most scenarios, the IP address of the monitored interface and all the local networks in use. The default already includes the RFC 1918 networks. In this example 10.0.0.23 is already included within 10.0.0.0/8. If no other networks are used the other predefined values can be removed.  
+<p>There are many possible configuration options, we focus on the setup of the HOME_NET variable and the network interface configuration. The HOME_NET variable should include, in most scenarios, the IP address of the monitored interface and all the local networks in use. The default already includes the RFC 1918 networks. In this example 10.0.0.23 is already included within 10.0.0.0/8. If no other networks are used the other predefined values can be removed.</p>  
 
-In this example the interface name is enp1s0 so the interface name in the af-packet section needs to match. An example interface config might look like this:
+`In this example the interface name is enp1s0 so the interface name in the af-packet section needs to match. An example interface config might look like this:`
 
-Capture settings:
+### Capture settings:
 
+```
 af-packet:  
     - interface: ens33  
       cluster-id: 99  
       cluster-type: cluster_flow  
       defrag: yes  
       tpacket-v3: yes  
+```
 
 
 
+## Suricata status and configuration file 
+```sudo systemctl status suricata```
 
-# Suricata status and configuration file : 
-<pre> sudo systemctl status suricata </pre>
-
-# Configuration file : 
-<pre> ip a </pre>
-<pre> sudo nano /etc/suricata/suricata.yaml </pre>
+## Configuration file  
+```
+ip a
+sudo nano /etc/suricata/suricata.yaml
+```
 
 *Ip change your ip*
+
+```
 HOME_NET: "[192.168.33.137/24"  
 EXTERNAL_NET: "any"  
-af-packet change  - interface: ens33 (your interface)  
+af-packet change  - interface: ens33 (your interface)
+```
+``` 
 sudo systemctl restart suricata  
+```
 
 *Default rules file parth* 
-<pre> /var/lib/suricata/rules </pre>
+``` /var/lib/suricata/rules
+```
 
 
-# Configuration file 
+## Configuration file 
 
-<pre> sudo nano /var/ossec/etc/ossec.conf  </pre>
+```sudo nano /var/ossec/etc/ossec.conf
+```
 
+```
 Change :  
  - eve-log:  
       enabled: yes  
@@ -123,101 +149,158 @@ Change :
             - http
             - tls
             - flow
+```
 
-# Local rules setup :
-<pre> sudo nano /var/lib/suricata/rules/local.rules </pre>
+## Local rules setup
+```
+sudo nano /var/lib/suricata/rules/local.rules </pre>
+```
 *Rules*
 
-<pre> Alert icmp any any -> any any (msg:”ICMP Ping Detected”: itype:8; sid:1000001; rev:1;) </pre>
-<pre> alert icmp any any -> $HOME_NET any (msg:"ALERT: ICMP Flood detected - 10+ packets in 10s"; threshold:type limit, track by_src, count 10, seconds 10; sid:1000001; rev:1;) </pre>
-<pre> alert icmp any any -> $HOME_NET any (msg:"CRITICAL: Aggressive ICMP Flood - 20+ packets in 4s"; threshold:type limit, track by_src, count 20, seconds 4; sid:1000003; rev:1;)</pre>
-
+```
+Alert icmp any any -> any any (msg:”ICMP Ping Detected”: itype:8; sid:1000001; rev:1;)
+```
+```
+alert icmp any any -> $HOME_NET any (msg:"ALERT: ICMP Flood detected - 10+ packets in 10s"; threshold:type limit, track by_src, count 10, seconds 10; sid:1000001; rev:1;)
+```
+```
+alert icmp any any -> $HOME_NET any (msg:"CRITICAL: Aggressive ICMP Flood - 20+ packets in 4s"; threshold:type limit, track by_src, count 20, seconds 4; sid:1000003; rev:1;)
+```
 
 *Add*
 
-<pre> /var/ossec/etc/ossec.conf </pre>
-
+```
+/var/ossec/etc/ossec.conf
+```
+```
 <ossec_config>  
   <localfile>  
     <log_format>json</log_format>  
     <location>/var/log/suricata/eve.json</location>  
   </localfile>  
 </ossec_config>  
+```
 
 
+## Permission Fix (socket directory issue)
 
-# Permission Fix (socket directory issue)
-<pre> sudo mkdir -p /var/run/suricata </pre>
-<pre> sudo chown suricata:suricata /var/run/suricata </pre>
-<pre> sudo systemctl restart suricata </pre>
-<pre> sudo nano /etc/apt/sources.list.d/wazuh.list </pre>
+```
+sudo mkdir -p /var/run/suricata
+```
+```
+sudo chown suricata:suricata /var/run/suricata
+```
+```
+sudo systemctl restart suricata
+```
+```
+sudo nano /etc/apt/sources.list.d/wazuh.list </pre>
+```
+## Log chack 
+```
+sudo tail -f /var/log/suricata/fast.log
+```
 
-# Log chack 
-<pre> sudo tail -f /var/log/suricata/fast.log </pre>
+
+## IPS
 
 
-# IPS
+### Configuration file parth 
 
-
-*Configuration file parth* 
-
-<pre> sudo nano /var/ossec/etc/ossec.conf </pre>
+```sudo nano /var/ossec/etc/ossec.conf
+```
 *af-packet*
 
-# Surocata rules file read
-<pre> sudo i </pre>
-<pre> cd /var/lib/suricata/rules/ </pre>
-<pre> nano suricata.rules </pre>
+## Surocata rules file read
+```
+sudo i
+```
+```
+cd /var/lib/suricata/rules/
+```
+```
+nano suricata.rules
+```
 
 
-# Manually suricata log show  
-
-<pre> cd /var/log/suricata/</pre> 
-<pre> nano fast.log </pre>
-<pre> cd /etc/suricata/rules</pre>
-<pre> nano local.rules </pre>
-
+## Manually suricata log show  
+```
+cd /var/log/suricata/
+```
+```
+nano fast.log
+```
+```
+cd /etc/suricata/rules
+ ```
+```
+nano local.rules
+```
 *Rules*
-<pre> drop tcp any any -> any 80 (msg:"Test"; sid:1000001;) </pre>
+```
+drop tcp any any -> any 80 (msg:"Test"; sid:1000001;)
+```
 
 
-# Suricata mane file rules gula ki ki ase egula e dekar jonno  
-Agent e  
+## Suricata mane file rules gula ki ki ase egula e dekar jonno  
+`Agent e`
 
-<pre> /etc/suricata/rules </pre>
+```
+/etc/suricata/rules
+```
 
 *Rouls*
-<pre> cat emerging-icmp_info.rules </pre>
-<pre> cd nano /etc/suricata/suricata.yaml</pre>
+```
+cat emerging-icmp_info.rules
+```
+```
+cd nano /etc/suricata/suricata.yaml
+```
 *nfq:*
 
-<pre> /var/lib/suricata/rules/ nano local.rules </pre>
+```
+/var/lib/suricata/rules/ nano local.rules
+```
 
-<pre> drop icmp any any -> $HOME_NET any (msg:"CRITICAL: ICMP FLOOD Blocked"; threshold:type limit, track by_src, count 20, seconds 4; sid:1000003; rev:1;) </pre>
-<pre> drop icmp any any -> $HOME_NET any (msg:"ICMP Flood Detected: 5 pings exceeded, blocking source"; threshold:type limit, track by_src, count 5, seconds 10; sid:1000005; rev:1;) </pre>
-<pre> drop icmp any any -> $HOME_NET any (msg:"DROP the ICMP PACKET"; sid:1000002; rev:1;) </pre>
+```
+drop icmp any any -> $HOME_NET any (msg:"CRITICAL: ICMP FLOOD Blocked"; threshold:type limit, track by_src, count 20, seconds 4; sid:1000003; rev:1;)
+```
+```
+drop icmp any any -> $HOME_NET any (msg:"ICMP Flood Detected: 5 pings exceeded, blocking source"; threshold:type limit, track by_src, count 5, seconds 10; sid:1000005; rev:1;)
+```
+```
+drop icmp any any -> $HOME_NET any (msg:"DROP the ICMP PACKET"; sid:1000002; rev:1;)
+ ```
 
 
 *Log show*
-<pre> sudo suricata -T -c /etc/suricata/suricata.yaml -S /var/lib/suricata/rules/local.rules </pre>
+```
+sudo suricata -T -c /etc/suricata/suricata.yaml -S /var/lib/suricata/rules/local.rules
+```
 
 
 
 
 
-# Manumaly Log Show in Machin
+## Manumaly Log Show in Machin
 
-1. Main log in suricata
-<pre> sudo tail -f /var/log/suricata/suricata.log</pre>
-<pre> sudo tail -f /var/log/suricata/stats.log </pre>
+`1. Main log in suricata`
+```
+sudo tail -f /var/log/suricata/suricata.log
+```
+```
+sudo tail -f /var/log/suricata/stats.log
+```
 
-2. Real-time log follow করতে
-<pre> sudo tail -f /var/log/suricata/suricata.log </pre>
+`2. Real-time log follow করতে`
+```
+sudo tail -f /var/log/suricata/suricata.log
+```
 
-4. JSON log দেখতে (SIEM বা Wazuh integration-এর জন্য)
-<pre> sudo tail -f /var/log/suricata/eve.json </pre>
-
-
+`4. JSON log দেখতে (SIEM বা Wazuh integration-এর জন্য)`
+```
+sudo tail -f /var/log/suricata/eve.json
+ ```
 
 
 
